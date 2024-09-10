@@ -1,0 +1,28 @@
+{
+    "images": [
+        {
+            "link": "../FE_0B/assets/image-product-1.jpg"
+        },
+        {
+            "link": "../FE_0B/assets/image-product-2.jpg"
+        },
+        {
+            "link": "../FE_0B/assets/image-product-3.jpg"
+        },
+        {
+            "link": "../FE_0B/assets/image-product-4.jpg"
+        },
+        {
+            "link": "../FE_0B/assets/image-product-1-thumbnail.jpg"
+        },
+        {
+            "link": "../FE_0B/assets/image-product-2-thumbnail.jpg"
+        },
+        {
+            "link": "../FE_0B/assets/image-product-3-thumbnail.jpg"
+        },
+        {
+            "link": "../FE_0B/assets/image-product-4-thumbnail.jpg"
+        }
+    ]
+}
