@@ -1,20 +1,84 @@
-.cart-icon {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: white;
-    color: black;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    
-}
-
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .nav-links a:hover { color: #000; }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .cart-wrapper {
+    position: relative;
+    cursor: pointer;
+  }
+  .cart-icon { width: 24px; height: 24px; }
+  .cart-badge {
+    position: absolute; top: -6px; right: -8px;
+    background: orange; color: #fff;
+    border-radius: 50%; padding: 2px 6px;
+    font-size: 0.75rem; font-weight: bold;
+  }
+  
+  /* cart dropdown */
+  .cart-dropdown {
+    position: absolute; top: 60px; right: 0;
+    width: 300px; background: #fff; padding: 1rem;
+  }
+  .cart-dropdown h4 { margin-bottom:1rem; }
+  .empty { text-align:center; color:#888; }
+  .dropdown-item {
+    display:flex; align-items:center; margin-bottom:1rem;
+  }
+  .thumb-small { width:50px; height:50px; border-radius:6px; object-fit:cover; margin-right:0.75rem; }
+  .item-info .name { margin:0; font-size:0.9rem; }
+  .item-info .price { margin:0; font-size:0.85rem; color:#555; }
+  .remove-btn { margin-left:auto; background:none; border:none; cursor:pointer; }
+  .checkout-btn {
+    width:100%; padding:0.75rem; background:#ff7e1b; color:#fff;
+    border:none; border-radius:6px; cursor:pointer; font-weight:bold;
+  }
+  
+  /* avatar & menu */
+  .avatar { width:32px; height:32px; border-radius:50%; }
+  .mobile-menu-btn { display:none; background:none; border:none; cursor:pointer; }
+  .menu-icon { width:24px; height:24px; }
+  
+  /* mobile menu */
+  .mobile-menu {
+    position:fixed; top:0; left:-100%; width:70%; height:100%;
+    background:#fff; padding:2rem; display:flex; flex-direction:column; gap:1.5rem;
+    transition:left 0.3s ease; z-index:9;
+  }
+  .mobile-menu.open { left:0; }
+  .mobile-menu a { color:#333; text-decoration:none; font-size:1.25rem; }
+  
+  /* responsive */
+  @media(max-width:768px) {
+    .nav-links { display:none; }
+    .mobile-menu-btn { display:block; }
+  }
+  

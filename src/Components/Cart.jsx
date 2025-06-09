@@ -1,47 +1,63 @@
 import React, { useState } from 'react';
+import './Body.css';
+import minus from "../FE_0B/assets/icon-minus.svg";
+import plus from "../FE_0B/assets/icon-plus.svg";
+import icon from "../FE_0B/assets/icon-cart.svg";
 import productData from '../FE_0B/assets/product.json';
 
-const Cart = () => {
-  const [cartCount, setCartCount] = useState(0); // Track the number of items in the cart
-  const [totalPrice, setTotalPrice] = useState(0); // Track the total price
+export default function Body({ onAddToCart }) {
+  const product = productData.product || {};
+  const [quantity, setQuantity] = useState(0);
 
-  const product = productData.product; // Access product data from JSON
+  const decrement = () => setQuantity(q => Math.max(0, q - 1));
+  const increment = () => setQuantity(q => q + 1);
 
-  const handleAddToCart = () => {
-    // Calculate the price (apply sale discount if applicable)
-    const itemPrice = product.isOnSale
-      ? product.price - (product.price * product.saleOff) / 100
-      : product.price;
+  const handleAdd = () => {
+    if (quantity < 1) return;
 
-    // Increase the cart count and update the total price
-    setCartCount(cartCount + 1);
-    setTotalPrice(totalPrice + itemPrice);
+    // call the parent callback to increment the header badge
+    onAddToCart();
+
+    // reset the counter
+    setQuantity(0);
   };
 
   return (
-    <div>
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <p>Price: ${product.isOnSale ? (
-          <>
-            <span style={{ textDecoration: 'line-through' }}>${product.price}</span>{' '}
-            <span>${product.price - (product.price * product.saleOff) / 100}</span>
-          </>
-        ) : (
-          `$${product.price}`
-        )}
-      </p>
+    <div className="body-wrapper">
+      <div className="quantity-controls">
+        <button onClick={decrement} className="minus">
+          <img src={minus} alt="minus" />
+        </button>
+        <span className="cart-total">{quantity}</span>
+        <button onClick={increment} className="plus">
+          <img src={plus} alt="plus" />
+        </button>
 
-      <button onClick={handleAddToCart}>Add to Cart</button>
-
-      <div>
-        <h3>Cart</h3>
-        <p>Items in Cart: {cartCount}</p>
-        <p>Total Price: ${totalPrice.toFixed(2)}</p>
+        <button onClick={handleAdd} className="add-to-cart">
+          <img src={icon} alt="cart icon" /> Add to cart
+        </button>
       </div>
     </div>
   );
-};
+}
+import React from 'react';
+import './Header.css';
+import cartIcon from '../FE_0B/assets/icon-cart.svg';
 
-export default Cart;
-
+export default function Header({ cartCount }) {
+  return (
+    <header className="header">
+      <div className="header-left">
+        <span className="header-title">Sneakers</span>
+      </div>
+      <div className="header-right">
+        <div className="cart-wrapper">
+          <img src={cartIcon} alt="Cart" className="cart-icon" />
+          {cartCount > 0 && (
+            <span className="cart-badge">{cartCount}</span>
+          )}
+        </div>
+      </div>
+    </header>
+  );
+}

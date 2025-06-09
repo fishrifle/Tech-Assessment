@@ -1,26 +1,15 @@
-.add {
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 300px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-}
+.body-container {
+    display:flex; gap:1rem; margin-top:1.5rem; flex-wrap: wrap;
+  }
+  .qty-controls {
+    display:flex; align-items:center; background:#f7f8fd; padding:0.5rem 1rem; border-radius:6px;
+  }
+  .qty-controls button {
+    background:none; border:none; cursor:pointer;
+  }
+  .qty-controls span { width:2rem; text-align:center; font-weight:600; }
+  .add-btn {
+    flex:1; background:#ff7e1b; color:#fff; border:none; padding:0.75rem;
+    border-radius:6px; cursor:pointer; font-weight:bold;
+  }
+  
