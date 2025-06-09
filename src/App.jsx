@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import ProductPage from './components/ProductPage'
+import ProductPage from './Components/ProductPage'
 import Header from './Components/Header'
 
 
