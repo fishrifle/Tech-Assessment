@@ -5,29 +5,16 @@ import Header from './Components/Header'
 
 
 function App() {
-  
-  
-  
-  
   return (
     <>
-<div>
-  <Header />
-  </div>
-  
-   
-   
-    <div><ProductPage/></div>
-
-
-    
-    
-    
+      <div>
+        <Header />
+      </div>
+      <div>
+        <ProductPage />
+      </div>
     </>
- 
-
-
-)
+  );
 }
 
 export default App
