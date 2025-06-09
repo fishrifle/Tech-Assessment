@@ -3,7 +3,7 @@ import './Body.css'
 import minus from "../FE_0B/assets/icon-minus.svg";
 import plus from "../FE_0B/assets/icon-plus.svg";
 import del from '../FE_0B/assets/icon-delete.svg'
-import quantity from '../FE_0B/assets/product.json'
+
 import icon from '../FE_0B/assets/icon-cart.svg'
 import productData from '../FE_0B/assets/product.json'
 

@@ -5,7 +5,7 @@ import Image1 from "../FE_0B/assets/image-product-1.jpg"
 import Image2 from "../FE_0B/assets/image-product-2.jpg"
 import Image3 from "../FE_0B/assets/image-product-3.jpg"
 import Image4 from "../FE_0B/assets/image-product-4.jpg"
-import './Quantity.css'
+
 import Body from './Body';
 
 
