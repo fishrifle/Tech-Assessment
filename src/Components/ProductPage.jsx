@@ -6,7 +6,6 @@ import Image2 from "../FE_0B/assets/image-product-2.jpg"
 import Image3 from "../FE_0B/assets/image-product-3.jpg"
 import Image4 from "../FE_0B/assets/image-product-4.jpg"
 
-import Body from './Body';
 
 
 const ProductPage = () => {
